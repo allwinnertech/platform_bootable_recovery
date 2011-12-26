@@ -7,13 +7,15 @@ on init
     export ANDROID_DATA /data
     export EXTERNAL_STORAGE /sdcard
 
-    symlink /system/etc /etc
+#    symlink /system/etc /etc
 
     mkdir /sdcard
     mkdir /system
     mkdir /data
     mkdir /cache
-    mount /tmp /tmp tmpfs
+#    mount /tmp /tmp tmpfs
+	mkdir /tmp
+	mount tmpfs tmpfs /tmp
 
 on boot
 

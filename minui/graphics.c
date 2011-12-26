@@ -82,14 +82,14 @@ static int get_framebuffer(GGLSurface *fb)
     }
 
     vi.bits_per_pixel = PIXEL_SIZE * 8;
-    if (PIXEL_FORMAT == GGL_PIXEL_FORMAT_BGRA_8888) {
-      vi.red.offset     = 8;
+    if (PIXEL_FORMAT == GGL_PIXEL_FORMAT_BGRA_8888) {	//use this for sun4i
+      vi.red.offset     = 16;
       vi.red.length     = 8;
-      vi.green.offset   = 16;
+      vi.green.offset   = 8;
       vi.green.length   = 8;
-      vi.blue.offset    = 24;
+      vi.blue.offset    = 0;
       vi.blue.length    = 8;
-      vi.transp.offset  = 0;
+      vi.transp.offset  = 24;
       vi.transp.length  = 8;
     } else if (PIXEL_FORMAT == GGL_PIXEL_FORMAT_RGBX_8888) {
       vi.red.offset     = 24;

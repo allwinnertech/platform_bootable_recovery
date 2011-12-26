@@ -62,6 +62,15 @@ LOCAL_STATIC_LIBRARIES := libmincrypt libcutils libstdc++ libc
 
 include $(BUILD_EXECUTABLE)
 
+# this is a debug tool, by weng.
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := go_recovery.c
+LOCAL_MODULE := go_recovery
+LOCAL_FORCE_STATIC_EXECUTABLE := true
+LOCAL_MODULE_TAGS := tests
+LOCAL_STATIC_LIBRARIES := libstdc++ libc
+include $(BUILD_EXECUTABLE)
 
 include $(commands_recovery_local_path)/minui/Android.mk
 include $(commands_recovery_local_path)/minelf/Android.mk
